@@ -1,4 +1,0 @@
-interface:
-  display_name: "Research Notes"
-  short_description: "Research and log sources in doc/research.md."
-  default_prompt: "Use this skill when academic papers, official docs, standards, or other external sources inform project work and must be logged for reuse."

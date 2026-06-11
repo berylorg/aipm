@@ -17,7 +17,7 @@ Use this skill to decide what should be remembered, where it should live, and ho
    Preserve it only when the task or failure mode is likely to recur, the corrected approach is understood, and the guidance can improve future work. Do not preserve ordinary one-off debugging details, transient environment facts, secrets, or raw blame narratives.
 
 2. Inspect current instructions.
-   Read active user, project, and workspace instructions for existing conventions about plans, design docs, incident logs, research notes, skills, or other durable records. Follow those conventions. If no convention exists for a project-local artifact, ask before creating a new project documentation structure.
+   Read active user, project, and workspace instructions for existing conventions about plans, design docs, incident logs, exploration memory, skills, or other durable records. Follow those conventions. If no convention exists for a project-local artifact, ask before creating a new project documentation structure.
 
 3. Prefer positive procedure.
    Write the durable lesson as "how to do it right" before writing "what went wrong." Failure history is useful as evidence, but future agents need a concrete workflow, checklist, invariant, or decision rule.

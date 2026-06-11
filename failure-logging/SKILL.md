@@ -34,7 +34,7 @@ Keep entries concise and actionable:
 - Evidence that invalidated it: command, test, source file, source doc, trace, or observed behavior.
 - Why it failed.
 - Course correction.
-- Affected design docs, plan phases, tests, or dependency notes.
+- Affected design docs, plan phases, tests, or exploration memory notes.
 - Remaining risks or follow-up questions.
 
 Avoid broad transcripts and speculative commentary.
@@ -47,4 +47,3 @@ Avoid broad transcripts and speculative commentary.
 4. Update authoritative design docs if target state changes.
 5. Add or update the failure note with evidence and course correction.
 6. Resume only after the contradiction or invalid assumption is resolved according to authority.
-

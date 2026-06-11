@@ -1,13 +1,13 @@
 ---
 name: cargo-projects
-description: Apply strict Rust Cargo workspace rules. Use when working in Cargo workspaces or crates, editing Cargo.toml dependencies, adding third-party crates, documenting crate APIs, placing tests, running verification, consulting Cargo.lock, resolving features, or creating doc/deps/<crate>/<resolved-version>.md dependency notes.
+description: Apply strict Rust Cargo workspace rules. Use when working in Cargo workspaces or crates, editing Cargo.toml dependencies, adding third-party crates, documenting crate APIs, placing tests, running verification, consulting Cargo.lock, resolving features, or creating Cargo dependency investigation memory under doc/memory.
 ---
 
 # Cargo Projects
 
 ## Core Rule
 
-Use this skill for Cargo-specific project work. Combine it with workspace-package-policy for generic package boundaries and dependency-source-notes for third-party source exploration.
+Use this skill for Cargo-specific project work. Combine it with workspace-package-policy for generic package boundaries.
 
 ## Workspace Dependencies
 
@@ -46,22 +46,16 @@ Match test coverage to risk:
 - Broaden tests for shared behavior, public APIs, cross-crate contracts, persistence, async behavior, or user-visible workflows.
 - Keep tests in the crate that owns the behavior unless an integration boundary requires a broader test.
 
-## Dependency Source Notes
+## Exploration Memory
 
 For expensive third-party dependency exploration:
 
 1. Determine the exact resolved crate version from `Cargo.lock`.
 2. Determine relevant enabled features from workspace manifests and `cargo metadata` when needed.
-3. Consult `doc/deps/<crate>/<resolved-version>.md`.
-4. Search local use sites, wrappers, adapters, re-exports, and tests before upstream source.
-5. Read upstream source narrowly for needed symbols, traits, macros, and modules.
-6. If the note is missing, stale, or insufficient, use a read-only subagent to create or refresh it.
-
-Dependency notes are non-authoritative reference notes. They do not replace design docs or `doc/plan.md`.
+3. Use exploration-memory for memory path, note format, source identity, refresh, and delegation rules.
 
 ## Source Organization
 
 For Rust source files over roughly 500 lines, split into focused internal modules when reasonably possible while preserving public API shape and behavior.
 
 Keep module names and visibility consistent with existing crate style. Avoid moving tests into source files during the split.
-

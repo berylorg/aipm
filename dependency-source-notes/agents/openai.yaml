@@ -1,4 +1,0 @@
-interface:
-  display_name: "Dependency Source Notes"
-  short_description: "Explore dependencies with doc/deps notes."
-  default_prompt: "Use this skill before expensive third-party dependency source exploration or when creating or refreshing doc/deps version notes."

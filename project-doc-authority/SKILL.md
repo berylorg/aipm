@@ -15,7 +15,7 @@ Use this default authority chain unless the project explicitly declares a differ
 4. Root `doc/plan.md` owns implementation sequencing and must derive from design authority.
 5. Code must derive from `doc/plan.md` and must not contradict design docs.
 
-Skills and agent instructions define process. Design docs define target state. Plans define execution order. Research, failure, and dependency notes support reasoning but do not override design authority.
+Skills and agent instructions define process. Design docs define target state. Plans define execution order. Exploration memory and failure notes support reasoning but do not override design authority.
 
 ## Default Vocabulary
 
@@ -77,4 +77,3 @@ When working on a workspace project, consult parent `doc/design.md` files and re
 If an operator request, plan, implementation, test, or note contradicts design or plan authority, stop and ask the operator to resolve the contradiction unless the task explicitly includes updating the authoritative docs first.
 
 Design docs must not contradict themselves or each other. When a conflict is discovered, fix the authority chain before relying on lower-level docs or code.
-
