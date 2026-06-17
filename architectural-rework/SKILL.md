@@ -1,6 +1,6 @@
 ---
 name: architectural-rework
-description: Manage clean architectural replacement work without incremental migratory compatibility. Use when a project, feature, or subproject is under rework, old docs or source must be archived and removed from live authority, new target docs and source must stay in authoritative locations, the durable plan must point to rework tracking, a completed durable plan may need the next rework checkpoint, or Codex must avoid migration adapters while replacing architecture.
+description: Manage clean architectural replacement work without incremental migratory compatibility. Use when a project, feature, system, or subproject is under rework, old docs or source must be archived and removed from live authority, new target docs and source must stay in authoritative locations, the durable plan must point to rework tracking, a completed durable plan may need the next rework checkpoint, or Codex must avoid migration adapters while replacing architecture.
 ---
 
 # Architectural Rework
@@ -36,9 +36,10 @@ Do not create a shim that keeps obsolete models authoritative, routes new code t
 
 Target-state design stays in the normal authoritative locations:
 
-- Feature behavior stays in authoritative feature docs.
-- Local boundary contracts stay in their authoritative docs.
-- Shared architecture stays in authoritative project docs.
+- User-visible feature behavior stays in authoritative feature docs.
+- Cross-feature or cross-package technical architecture stays in authoritative system docs.
+- Local package, subproject, or artifact boundary contracts stay in their authoritative package docs.
+- Project-declared root or parent authority docs are used only when the project assigns them a target-state role.
 
 New source code stays in final live source locations.
 
@@ -57,7 +58,7 @@ The active durable plan must point to the active `doc/rework/<name>/REWORK.md`. 
 
 On any architectural rework task, read the active durable plan before source edits.
 
-If the durable plan points to an active rework, read that `REWORK.md` and its target docs before relying on existing source or feature docs.
+If the durable plan points to an active rework, read that `REWORK.md` and its target docs before relying on existing source, feature docs, system docs, or package docs.
 
 If the user describes an active rework but the durable plan does not point to `doc/rework/<name>/REWORK.md`, reconcile the awareness docs first. Do not start implementation while the active rework authority is implicit or discoverable only from conversation history.
 

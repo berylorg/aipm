@@ -30,7 +30,7 @@ If another active skill or project authority constrains planning scope, inputs, 
 
 ## Planning Workflow
 
-1. Read the controlling root, feature, parent, package, API, and design docs.
+1. Read the controlling feature, system, package or subproject, API, rework, and design docs, plus any project-declared root or parent authority docs.
 2. Stop if the requested work contradicts design authority.
 3. Define scope from the authoritative docs.
 4. Split implementation into small coherent phases.
