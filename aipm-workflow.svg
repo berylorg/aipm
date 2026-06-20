@@ -48,15 +48,15 @@
   <g id="main-flow">
     <rect class="node authority" x="60" y="110" width="240" height="70"/>
     <text class="label" x="82" y="139">Feature design</text>
-    <text class="caption" x="82" y="162">product behavior</text>
+    <text class="caption" x="82" y="162">doc/features/</text>
 
     <rect class="node authority" x="60" y="220" width="240" height="70"/>
     <text class="label" x="82" y="249">System design</text>
-    <text class="caption" x="82" y="272">cross-package architecture</text>
+    <text class="caption" x="82" y="272">doc/systems/</text>
 
     <rect class="node authority" x="60" y="330" width="240" height="70"/>
     <text class="label" x="82" y="359">Subproject design</text>
-    <text class="caption" x="82" y="382">package boundary spec</text>
+    <text class="caption" x="82" y="382">&lt;subproject&gt;/doc/design.md</text>
 
     <polygon class="decision" points="360,360 440,315 520,360 440,405"/>
     <text class="caption" text-anchor="middle" x="440" y="355">Architectural</text>
