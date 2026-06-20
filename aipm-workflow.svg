@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">AIPM workflow</title>
+  <desc id="desc">AIPM design authority flows from feature design to system design to subproject design, then into optional architectural rework, implementation planning, phased implementation, review, failure logging, and reusable investigation memory.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#aeb8c5"/>
+    </marker>
+    <marker id="arrow-soft" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto-start-reverse" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#7b879a"/>
+    </marker>
+    <style>
+      .canvas { fill: #000000; }
+      .title { font: 700 28px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; fill: #f8fafc; }
+      .subtitle { font: 400 15px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; fill: #9aa8ba; }
+      .label { font: 700 16px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; fill: #eef4ff; }
+      .caption { font: 400 13px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; fill: #b9c6d8; }
+      .small { font: 400 12px -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; fill: #91a0b4; }
+      .node { stroke-width: 1.6; rx: 10; ry: 10; }
+      .authority { fill: #101b2f; stroke: #5d91d6; }
+      .plan { fill: #241a0b; stroke: #d6a342; }
+      .work { fill: #0f241b; stroke: #46b977; }
+      .store { fill: #20152e; stroke: #a78bfa; }
+      .failure { fill: #2a1018; stroke: #fb7185; }
+      .agent { fill: #101827; stroke: #7b879a; stroke-dasharray: 5 4; }
+      .decision { fill: #111827; stroke: #7b879a; stroke-width: 1.6; }
+      .arrow { fill: none; stroke: #aeb8c5; stroke-width: 2; marker-end: url(#arrow); opacity: .92; }
+      .arrow-soft { fill: none; stroke: #7b879a; stroke-width: 1.7; stroke-dasharray: 7 6; marker-start: url(#arrow-soft); marker-end: url(#arrow-soft); opacity: .72; }
+      .delegate { fill: none; stroke: #7b879a; stroke-width: 1.7; stroke-dasharray: 5 5; marker-end: url(#arrow-soft); }
+      .loop { fill: none; stroke: #aeb8c5; stroke-width: 2; marker-end: url(#arrow); opacity: .92; }
+    </style>
+  </defs>
+  <rect class="canvas" width="1200" height="900"/>
+  <text class="title" x="52" y="54">AIPM workflow</text>
+  <text class="subtitle" x="52" y="82">Design authority feeds phased implementation; investigation memory is reused across steps.</text>
+
+  <g id="memory-links">
+    <path class="arrow-soft" d="M300 140 C515 100 730 100 945 158"/>
+    <path class="arrow-soft" d="M300 250 C525 225 735 185 945 178"/>
+    <path class="arrow-soft" d="M300 360 C520 365 745 270 945 205"/>
+    <path class="arrow-soft" d="M560 502 C700 455 810 300 945 218"/>
+    <path class="arrow-soft" d="M860 362 C900 310 920 260 945 218"/>
+    <path class="arrow-soft" d="M875 298 C900 260 918 235 945 210"/>
+    <path class="arrow-soft" d="M980 706 C1060 560 1080 370 1048 225"/>
+    <path class="arrow-soft" d="M560 582 C745 565 910 405 995 225"/>
+    <path class="arrow-soft" d="M980 803 C1100 620 1115 380 1085 225"/>
+  </g>
+
+  <g id="main-flow">
+    <rect class="node authority" x="60" y="110" width="240" height="70"/>
+    <text class="label" x="82" y="139">Feature design</text>
+    <text class="caption" x="82" y="162">product behavior</text>
+
+    <rect class="node authority" x="60" y="220" width="240" height="70"/>
+    <text class="label" x="82" y="249">System design</text>
+    <text class="caption" x="82" y="272">cross-package architecture</text>
+
+    <rect class="node authority" x="60" y="330" width="240" height="70"/>
+    <text class="label" x="82" y="359">Subproject design</text>
+    <text class="caption" x="82" y="382">package boundary spec</text>
+
+    <polygon class="decision" points="360,360 440,315 520,360 440,405"/>
+    <text class="caption" text-anchor="middle" x="440" y="355">Architectural</text>
+    <text class="caption" text-anchor="middle" x="440" y="374">rework needed?</text>
+
+    <rect class="node plan" x="320" y="465" width="240" height="74"/>
+    <text class="label" x="342" y="493">Optional rework plan</text>
+    <text class="caption" x="342" y="516">doc/rework/&lt;name&gt;/REWORK.md</text>
+
+    <rect class="node agent" x="320" y="555" width="240" height="44"/>
+    <text class="caption" text-anchor="middle" x="440" y="581">parallel subagent exploration</text>
+
+    <rect class="node agent" x="620" y="270" width="240" height="40"/>
+    <text class="caption" text-anchor="middle" x="740" y="294">parallel subagent exploration</text>
+
+    <rect class="node plan" x="620" y="325" width="240" height="74"/>
+    <text class="label" x="642" y="353">Create doc/plan.md</text>
+    <text class="caption" x="642" y="376">phased implementation plan</text>
+
+    <rect class="node work" x="620" y="465" width="240" height="74"/>
+    <text class="label" x="642" y="493">Execute next phase</text>
+    <text class="caption" x="642" y="516">one hard task at a time</text>
+
+    <rect class="node work" x="500" y="670" width="210" height="72"/>
+    <text class="label" x="522" y="699">Implementation</text>
+    <text class="caption" x="522" y="721">code and docs change</text>
+
+    <rect class="node failure" x="500" y="785" width="210" height="58"/>
+    <text class="label" x="522" y="811">doc/failures/</text>
+    <text class="caption" x="522" y="830">failed approaches</text>
+
+    <rect class="node work" x="760" y="670" width="190" height="72"/>
+    <text class="label" x="782" y="699">Review</text>
+    <text class="caption" x="782" y="721">check authority and diff</text>
+
+    <rect class="node agent" x="760" y="775" width="190" height="44"/>
+    <text class="caption" text-anchor="middle" x="855" y="801">parallel subagent exploration</text>
+
+    <polygon class="decision" points="970,505 1040,465 1110,505 1040,545"/>
+    <text class="caption" text-anchor="middle" x="1040" y="501">New phases</text>
+    <text class="caption" text-anchor="middle" x="1040" y="520">needed?</text>
+
+    <rect class="node work" x="1015" y="670" width="140" height="72"/>
+    <text class="label" text-anchor="middle" x="1085" y="699">Accepted</text>
+    <text class="caption" text-anchor="middle" x="1085" y="721">or complete</text>
+
+    <rect class="node store" x="945" y="120" width="205" height="105"/>
+    <text class="label" x="970" y="154">doc/memory/</text>
+    <text class="caption" x="970" y="178">investigation cache</text>
+    <text class="small" x="970" y="201">dashed arrows: learn/reuse</text>
+
+    <path class="arrow" d="M180 180 L180 220"/>
+    <path class="arrow" d="M180 290 L180 330"/>
+    <path class="arrow" d="M300 365 L360 365"/>
+    <path class="arrow" d="M440 405 L440 465"/>
+    <path class="arrow" d="M520 360 L620 360"/>
+    <path class="arrow" d="M560 502 C595 502 585 362 620 362"/>
+    <path class="arrow" d="M740 399 L740 465"/>
+    <path class="arrow" d="M740 539 C705 600 655 640 605 670"/>
+    <path class="arrow" d="M710 706 L760 706"/>
+    <path class="arrow" d="M605 742 L605 785"/>
+    <path class="arrow" d="M950 706 C1005 680 1040 590 1040 545"/>
+    <path class="arrow" d="M1040 545 C1040 615 1085 615 1085 670"/>
+    <path class="loop" d="M970 505 C925 455 905 385 860 362"/>
+    <path class="delegate" d="M440 539 L440 555"/>
+    <path class="delegate" d="M740 325 L740 310"/>
+    <path class="delegate" d="M855 742 L855 775"/>
+
+    <text class="small" x="452" y="446">yes</text>
+    <text class="small" x="560" y="348">no</text>
+    <text class="small" x="905" y="448">add phases to plan.md</text>
+    <text class="small" x="1074" y="632">no</text>
+  </g>
+
+  <g id="labels">
+  </g>
+</svg>

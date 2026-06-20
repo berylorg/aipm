@@ -20,6 +20,8 @@ AIPM helps keep the codebase, documentation, and architecture aligned:
 
 ## How AIPM Works
 
+![AIPM workflow](aipm-workflow.svg)
+
 AIPM treats documentation as an authority chain.
 
 `feature-design-docs` establishes feature specs for user-visible product behavior. Feature docs describe workflows, visible states, errors, and acceptance rules. They do not descend into technical architecture.
